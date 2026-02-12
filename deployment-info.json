@@ -1,15 +1,8 @@
 {
   "schema": "bsv-app",
   "schemaVersion": "1.0",
-  "topicManagers": {
-    "tm_helloworld": "./backend/src/topic-managers/HelloWorldTopicManager.ts"
-  },
-  "lookupServices": {
-    "ls_helloworld": {
-      "serviceFactory": "./backend/src/lookup-services/HelloWorldLookupServiceFactory.ts",
-      "hydrateWith": "mongo"
-    }
-  },
+  "topicManagers": {},
+  "lookupServices": {},
   "frontend": {
     "language": "react",
     "sourceDirectory": "./frontend"
@@ -21,7 +14,6 @@
       "network": "mainnet",
       "provider": "LARS",
       "run": [
-        "backend",
         "frontend"
       ]
     },
@@ -32,8 +24,7 @@
       "projectID": "2e97d492e90354a3a453e526cf53819c",
       "network": "mainnet",
       "deploy": [
-        "frontend",
-        "backend"
+        "frontend"
       ],
       "frontendHostingMethod": "HTTPS"
     }

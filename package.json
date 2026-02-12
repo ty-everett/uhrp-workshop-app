@@ -2,7 +2,7 @@
   "name": "uhrp-workshop-app",
   "private": true,
   "version": "1.0.0",
-  "description": "Standard BSV project structure",
+  "description": "Frontend-only BSV UHRP workshop app",
   "scripts": {
     "lars": "lars",
     "cars": "cars",
