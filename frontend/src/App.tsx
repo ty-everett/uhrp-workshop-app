@@ -28,6 +28,7 @@ import AddIcon from '@mui/icons-material/Add'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { Img } from '@bsv/uhrp-react'
 
 import { WalletClient, WalletInterface, StorageUploader, StorageUtils } from '@bsv/sdk'
 import { createToken, queryTokens, HelloWorldToken } from 'hello-tokens'
@@ -159,7 +160,6 @@ const HelloWorldApp: React.FC = () => {
 
     try {
       setCreateLoading(true)
-      debugger
       const uploader = new StorageUploader({ storageURL: UHRP_STORAGE_URL, wallet: wallet as WalletInterface })
       const imageBytes = new Uint8Array(await selectedImage.arrayBuffer())
       const uploadResult = await uploader.publishFile({
@@ -235,7 +235,17 @@ const HelloWorldApp: React.FC = () => {
           <Grid item key={idx}>
             <MessageCard>
               <CardContent>
-                <Typography variant='body1'>{m.message}</Typography>
+                {StorageUtils.isValidURL(m.message.trim())
+                  ? (
+                    <Img
+                      src={m.message.trim()}
+                      alt='UHRP post'
+                      style={{ width: '100%', maxHeight: '260px', objectFit: 'cover', borderRadius: '6px' }}
+                    />
+                    )
+                  : (
+                    <Typography variant='body1'>{m.message}</Typography>
+                    )}
               </CardContent>
             </MessageCard>
           </Grid>
