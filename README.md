@@ -7,6 +7,8 @@ This project is a frontend-only workshop app that lets users:
 - Publish the image UHRP URL as post content.
 - Render posts as either text or images, depending on content.
 
+The app uses the current `@bsv/sdk` storage APIs with a BRC-100 `WalletClient`. BSV Desktop, BSV Browser, or any compatible BRC-100 wallet can satisfy the wallet side of the flow.
+
 ## Project Structure
 
 ```txt
@@ -98,6 +100,8 @@ The uploader storage service can be configured in the frontend via:
 - `VITE_UHRP_STORAGE_URL`
 
 If not provided, the app uses its built-in default from `frontend/src/App.tsx`.
+
+The current default storage host is `https://go-uhrp-us-1.bsvblockchain.tech`.
 
 ## Notes for Workshop Participants
 

@@ -1,16 +1,15 @@
-# HelloWorld Example Overlay App
+# UHRP Workshop Frontend
 
-Broadcast and track HelloWorld messages using Bitcoin.
-
-A Stageline ("testnet") deployment of the master branch of this repository is at staging-helloworld.babbage.systems
+Broadcast text posts, upload images through UHRP, and publish UHRP references as BSV-backed post content.
 
 ## Overview
 
-This HelloWorld example application showcases MetaNet technologies like tokenization, identity, and state management.
+This workshop application demonstrates current BSV application patterns:
 
-You also need to understand the HelloWorld Protocol, which defines the data format for HelloWorld tokens.
-
-To learn more about building Bitcoin-powered applications for the MetaNet with these tools, head over to the Babbage Platform Documentation.
+- `@bsv/sdk` `WalletClient` for BRC-100 wallet access.
+- `StorageUploader` for publishing files to UHRP storage.
+- `@bsv/uhrp-react` for rendering UHRP-backed media.
+- PushDrop-style HelloWorld tokens for text and image-reference posts.
 
 ## Development Instructions
 
@@ -18,7 +17,7 @@ Clone the repo, then run npm i to install packages.
 
 To start the live development server on localhost:8088, run npm run start.
 
-Start Babbage Stageline to interact with this application.
+Start a BRC-100 compatible wallet such as BSV Desktop or BSV Browser to interact with this application.
 
 Your changes should be reflected on-screen whenever you save in your editor, or reload.
 
@@ -33,7 +32,7 @@ This HelloWorld application uses various Bitcoin and web-related tools for diffe
 - React We use React to render the webpage UI for this application, and track the state of the page.
 - MUI We use a UI framework within React called MUI to help with page styling, text fields, buttons, and dialog boxes.
 - Bitcoin SV We use the Bitcoin SV blockchain to timestamp and register our HelloWorld message tokens, and we rely on satoshis (a measurement of Bitcoin), so that the HelloWorld tokens are valuable.
-- Babbage SDK We use the Babbage SDK so that users are able to have a Bitcoin-native identity, and can create and track Bitcoin tokens. The SDK also allows us to easily encrypt message data for added user privacy.
+- BSV TypeScript SDK We use `@bsv/sdk` so users can connect through a BRC-100 wallet, create tokens, and upload UHRP-backed media.
 - PushDrop We use PushDrop to create Bitcoin tokens that follow the HelloWorld protocol. - PushDrop makes it easier to add data payloads to tokens, while still being able to give them value.
 
 ## License

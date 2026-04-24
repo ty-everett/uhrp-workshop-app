@@ -59,7 +59,7 @@ const RETENTION_OPTIONS = [
   { label: '7 Days', value: DEFAULT_RETENTION_MINUTES },
   { label: '30 Days', value: 60 * 24 * 30 }
 ]
-const UHRP_STORAGE_URL = import.meta.env.VITE_UHRP_STORAGE_URL ?? 'https://nanostore.babbage.systems'
+const UHRP_STORAGE_URL = import.meta.env.VITE_UHRP_STORAGE_URL ?? 'https://go-uhrp-us-1.bsvblockchain.tech'
 
 const HelloWorldApp: React.FC = () => {
   /* ------------------------------ Form state ------------------------------ */
